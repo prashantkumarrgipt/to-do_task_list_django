@@ -1,0 +1,20 @@
+<!-- myapp/templates/bulk_add_tasks.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bulk Add Tasks</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <a href="/"><h3 style="font-style: italic;color: red;">Home</h3></a>
+        <h1>Bulk Add Tasks</h1>
+        <form method="post" id="myform">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Tasks</button>
+        </form>
+    </div>
+</body>
+</html>
